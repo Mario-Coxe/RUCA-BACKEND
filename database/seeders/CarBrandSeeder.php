@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\CarBrand;
+use App\Models\Brands;
 
 class CarBrandSeeder extends Seeder
 {
@@ -63,7 +63,7 @@ class CarBrandSeeder extends Seeder
         ];
 
         foreach ($carBrands as $brand) {
-            CarBrand::create([
+            Brands::create([
                 'name' => $brand
             ]);
         }
