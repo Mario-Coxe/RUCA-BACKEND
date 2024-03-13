@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\ColorSeeder;
 use Database\Seeders\CarBrandSeeder;
 use Database\Seeders\ModelsSeeder;
-
+use Database\Seeders\FuelsSeeder;
 
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            ColorSeeder::class, CarBrandSeeder::class, ModelsSeeder::class
+            ColorSeeder::class, CarBrandSeeder::class, ModelsSeeder::class, FuelsSeeder::class
         ]);
     }
 }
