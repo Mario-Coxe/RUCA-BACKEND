@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Api\BrandsController;
-
+use App\Http\Controllers\Api\ModelsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,6 +24,10 @@ Route::controller(LoginRegisterController::class)->group(function () {
 
 Route::controller(BrandsController::class)->group(function () {
     Route::get('/brand/{id}', 'show')->middleware('auth:sanctum');
+});
+
+Route::controller(ModelsController::class)->group(function () {
+    Route::get('/model/{brand_id}', 'show')->middleware('auth:sanctum');
 });
 
 
