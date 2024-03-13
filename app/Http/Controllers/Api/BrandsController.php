@@ -21,4 +21,15 @@ class BrandsController extends Controller
             return response()->json(['message' => 'Marca não encontrada'], 404);
         }
     }
+
+    public function show_all()
+    {
+        $models = Brands::all();
+
+        if ($models->count() > 0) {
+            return response()->json(['message' => '', 'brands' => $models], 200);
+        } else {
+            return response()->json(['message' => 'Nenhuma marca de combustível encontrado'], 404);
+        }
+    }
 }
