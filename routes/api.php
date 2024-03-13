@@ -1,15 +1,8 @@
 <?php
 
-use App\Http\Controllers\Api\EventController;
-use App\Http\Controllers\Api\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\LoginRegisterController;
-use App\Http\Controllers\Api\CalenderController;
-use App\Http\Controllers\Api\HorarioController;
-use App\Http\Controllers\APi\ProfessorController;
-use App\Http\Controllers\APi\TarefaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +19,13 @@ use App\Http\Controllers\APi\TarefaController;
 Route::controller(LoginRegisterController::class)->group(function () {
     Route::post('/auth/login', 'login');
     Route::post('/auth/register', 'register');
-
 });
+
+// Route::controller(::class)->group(function () {
+//     Route::get('/events/{team_id}', 'show')->middleware('auth:sanctum');
+//     Route::get('/events/search/{team_id}/{search?}', 'search')->middleware('auth:sanctum');
+// });
+
 
 // // Public routes of product
 // Route::controller(ProductController::class)->group(function () {

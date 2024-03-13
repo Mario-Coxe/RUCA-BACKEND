@@ -1,3 +1,9 @@
 php artisan serve --host=172.22.240.1 --port=8081
 
 php artisan storage:link
+
+
+
+php artisan db:seed --class=ColorSeeder
+php artisan make:seed ColorSeeder
+php artisan make:Model Colors -m
