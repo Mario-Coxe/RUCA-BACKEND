@@ -6,6 +6,8 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Api\BrandsController;
 use App\Http\Controllers\Api\ModelsController;
 use App\Http\Controllers\Api\FuelsController;
+use App\Http\Controllers\Api\TrasportController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -37,6 +39,12 @@ Route::controller(ModelsController::class)->group(function () {
 Route::controller(FuelsController::class)->group(function () {
     Route::get('/fuel', 'show_all')->middleware('auth:sanctum');
 });
+
+
+Route::controller(TrasportController::class)->group(function () {
+    Route::get('/transport/create', 'store')->middleware('auth:sanctum');
+});
+
 
 
 // // Public routes of product

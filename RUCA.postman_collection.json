@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "01841919-8f5a-4432-9f20-ece7b3e76a87",
+		"name": "RUCA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32839951"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\": \"922723380\",\r\n    \"password\": \"1234\",\r\n    \"name\": \"Isaías Coxe\",\r\n    \"email\": \"filipe@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234\",\r\n    \"phone_number\": \"945047525\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand/Model",
+			"item": [
+				{
+					"name": "brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/brand/28"
+					},
+					"response": []
+				},
+				{
+					"name": "brand_show_all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/brand/28"
+					},
+					"response": []
+				},
+				{
+					"name": "model",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/model/43"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fuels",
+			"item": [
+				{
+					"name": "fuel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/fuel"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
