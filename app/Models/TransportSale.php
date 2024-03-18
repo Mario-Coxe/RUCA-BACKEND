@@ -8,7 +8,7 @@ class TransportSale extends Model
 {
     protected $fillable = [
         'transport_id',
-        'price',
+       //'price',
         'status',
     ];
 

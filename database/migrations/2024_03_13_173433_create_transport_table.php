@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('model_id')->constrained('models')->onDelete('cascade');
             $table->foreignId('year_id')->constrained('years')->onDelete('cascade');
             $table->foreignId('fuel_id')->constrained('fuels')->onDelete('cascade');
+            $table->string('price');
             $table->string('motorization_cc')->nullable();
             $table->string('power_hp')->nullable();
             $table->enum('gear_box', ['Automática', 'Manual'])->nullable();
@@ -44,7 +45,7 @@ return new class extends Migration
             $table->string('rental_time')->default('0');
             $table->date('rental_start_date');
             $table->date('rental_end_date')->nullable();
-            $table->float('price');
+            // $table->float('price');
             $table->enum('status', ['Pago', 'Processando', 'Dísponivel'])->default('Dísponivel');
             $table->timestamps();
         });
@@ -52,7 +53,7 @@ return new class extends Migration
         Schema::create('transport_sales', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transport_id')->constrained('transport')->onDelete('cascade');
-            $table->float('price');
+            // $table->float('price');
             $table->enum('status', ['Pago', 'Processando', 'Dísponivel'])->default('Dísponivel');
             $table->timestamps();
         });

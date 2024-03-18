@@ -11,7 +11,7 @@ class TransportRental extends Model
         'rental_time',
         'rental_start_date',
         'rental_end_date',
-        'price',
+      //  'price',
         'status',
     ];
 

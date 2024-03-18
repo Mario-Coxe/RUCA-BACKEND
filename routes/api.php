@@ -42,7 +42,7 @@ Route::controller(FuelsController::class)->group(function () {
 
 
 Route::controller(TrasportController::class)->group(function () {
-    Route::get('/transport/create', 'store')->middleware('auth:sanctum');
+    Route::post('/transport/create', 'store')->middleware('auth:sanctum');
 });
 
 

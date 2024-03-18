@@ -2,14 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Transport extends Model
 {
+
+    protected $table = 'transport';
+
     protected $fillable = [
+        'id',
         'title',
         'status',
         'type',
+        'price',
         'sale_or_rent',
         'user_id',
         'brand_id',
@@ -29,6 +35,28 @@ class Transport extends Model
         'photos',
         'description',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Adiciona um evento de criação para criar transport_sale e transport_rental após a criação do transporte
+        static::created(function ($transport) {
+            if ($transport->sale_or_rent === 'Venda') {
+                $transportSale = new TransportSale([
+                    'transport_id' => $transport->id
+                    // Outros atributos do TransportSale
+                ]);
+                $transportSale->save();
+            } elseif ($transport->sale_or_rent === 'Aluguer') {
+                $transportRental = new TransportRental([
+                    'transport_id' => $transport->id
+                    // Outros atributos do TransportRental
+                ]);
+                $transportRental->save();
+            }
+        });
+    }
 
     // Relacionamento com o usuário (um transporte pertence a um usuário)
     public function user()
