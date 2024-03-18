@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "01841919-8f5a-4432-9f20-ece7b3e76a87",
+		"name": "RUCA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32839951"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\": \"945047525\",\r\n    \"password\": \"1234\",\r\n    \"name\": \"Isaías Coxe\",\r\n    \"email\": \"coxe@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234\",\r\n    \"phone_number\": \"945047525\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brand/Model",
+			"item": [
+				{
+					"name": "brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/brand/28"
+					},
+					"response": []
+				},
+				{
+					"name": "brand_show_all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/brand/28"
+					},
+					"response": []
+				},
+				{
+					"name": "model",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/model/43"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fuels",
+			"item": [
+				{
+					"name": "fuel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "1|v1eGPOXxSgvKXfzyhP0sa8eKfac3sXB7gAL8iaLQCT9448a149"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/fuel"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transport",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "2|v16BudLlgFGzdboXE0WGFVNInTORWtT3usQQPWcAcZ6105db5c"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Elantra\",\r\n    \"status\": \"Novo\",\r\n    \"type\": \"Carro\",\r\n    \"sale_or_rent\": \"Venda\",\r\n    \"user_id\": 1,\r\n    \"brand_id\": 1,\r\n    \"model_id\": 1,\r\n    \"year_id\": 1,\r\n    \"fuel_id\": 1,\r\n    \"motorization_cc\": \"2000\",\r\n    \"power_hp\": \"150\",\r\n    \"gear_box\": \"Automática\",\r\n    \"color_id\": 1,\r\n    \"air_conditioning\": \"Automático\",\r\n    \"equipment\": [\"GPS\", \"Bluetooth\"],\r\n    \"security\": [\"ABS\", \"Airbag\"],\r\n    \"parking_sensors\": [\"Frontal\", \"Traseiro\"],\r\n    \"airbags\": [\"Frontal\", \"Lateral\"],\r\n    \"extras\": [\"Teto solar\", \"Rodas de liga leve\"],\r\n    \"photos\": [\"photo1.jpg\", \"photo2.jpg\"],\r\n    \"description\": \"Este é um carro incrível!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/transport/create"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
