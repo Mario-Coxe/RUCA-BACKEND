@@ -73,6 +73,8 @@ class LoginRegisterController extends Controller
         return response()->json([
             'status' => 200,
             'message' => 'Usuário Criado',
+            'data' => $user,
+
         ]);
     }
 
@@ -98,7 +100,7 @@ class LoginRegisterController extends Controller
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
                 'status' => 'failed',
-                'message' => 'Credencias Incorrectas'
+                'message' => 'Credenciais Incorretas ou Conta não encontrada.'
             ], 401);
         }
         if ($user->is_active != 1) {
